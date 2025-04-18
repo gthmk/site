@@ -5,6 +5,9 @@ import Container from "@components/Container.astro";
 import RootAccordion from "@components/RootAccordion.astro";
 import WorkExperience from "@components/WorkExperience.astro";
 import Education from "@components/Education.astro";
+import Publications from "@components/Publications.astro";
+import Media from "@components/Media.astro";
+import Awards from "@components/Awards.astro";
 import { CV } from "@consts";
 
 await getCollection("cv");
@@ -22,15 +25,15 @@ await getCollection("cv");
       </RootAccordion>
 
       <RootAccordion title="Publications" emoji="📚">
-        <!-- Publications content will go here -->
+        <Publications />
       </RootAccordion>
 
-      <RootAccordion title="Media" emoji="📰">
-        <!-- Media content will go here -->
+      <RootAccordion title="Media" emoji="🎥">
+        <Media />
       </RootAccordion>
 
       <RootAccordion title="Awards" emoji="🏆">
-        <!-- Awards content will go here -->
+        <Awards />
       </RootAccordion>
     </div>
   </Container>
