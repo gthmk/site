@@ -32,7 +32,7 @@ const roleEmoji = getRoleEmoji(title);
     <div class="flex justify-between items-start gap-4">
       <div class="space-y-3 md:space-y-4 flex-grow">
         <div class="flex items-center justify-between">
-          <h3 class="text-base md:text-lg font-mono flex items-center gap-2 text-black dark:text-white">
+          <h3 class="text-base md:text-base font-mono font-bold flex items-center gap-2 text-black dark:text-white">
             <span role="img" aria-label="role">{roleEmoji}</span> {title}
           </h3>
           <button class="accordion-toggle p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 flex-shrink-0 transition-colors">
@@ -51,18 +51,18 @@ const roleEmoji = getRoleEmoji(title);
               loading="lazy"
             />
           )}
-          <a href={website} target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-mono text-sm md:text-base">
+          <a href={website} target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-mono text-base md:text-base">
             {company}
           </a>
         </div>
 
-        <div class="font-mono flex items-center gap-2 text-black dark:text-white text-sm md:text-base">
+        <div class="font-mono flex items-center gap-2 text-black dark:text-white text-base md:text-base">
           <span role="img" aria-label="location">📍</span> {location}
           <span class="mx-2">·</span>
           <span role="img" aria-label="duration">⌚</span> {period}
         </div>
 
-        <p class="font-mono text-gray-600 dark:text-gray-300 text-sm md:text-base">
+        <p class="font-mono text-gray-600 dark:text-gray-300 text-base md:text-base">
           {company === "GetReal Labs Inc." ? 
             <>Founding engineering team member at a cybersecurity and digital forensics startup incubated by <a href="https://ballisticventures.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Ballistic Ventures</a> and <a href="https://farid.berkeley.edu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Dr. Hany Farid</a></> : 
             description
@@ -74,7 +74,7 @@ const roleEmoji = getRoleEmoji(title);
     <div class="accordion-content hidden mt-4 md:mt-6 border-t border-gray-200 dark:border-gray-700 pt-4 md:pt-6 space-y-4 md:space-y-6">
       {details.map((section) => (
         <div>
-          <h4 class="text-base md:text-lg font-mono font-semibold mb-2 md:mb-3 text-black dark:text-white">{section.title}</h4>
+          <h4 class="text-base md:text-base font-mono font-bold mb-2 md:mb-3 text-black dark:text-white">{section.title}</h4>
           <ul class="list-disc ml-4 space-y-1.5 md:space-y-2">
             {section.items.map((item) => (
               <li class="font-mono text-gray-600 dark:text-gray-300 text-sm md:text-base">{item}</li>
