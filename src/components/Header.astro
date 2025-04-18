@@ -11,7 +11,7 @@ const currentPath = pathname.slice(1); // remove leading slash
     <div class="flex flex-wrap gap-y-2 justify-between items-center">
       <div class="flex items-center gap-2">
         <Link href="/" underline={false}>
-          <div class={`text-base md:text-2xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
+          <div class={`text-sm md:text-2xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
             👨🏽‍💻 gthmk.dev
           </div>
         </Link>
@@ -33,25 +33,25 @@ const currentPath = pathname.slice(1); // remove leading slash
           </svg>
         </button>
       </div>
-      <nav class="flex gap-1 md:gap-2 font-mono">
+      <nav class="flex gap-1 md:gap-2 font-mono items-center">
         <Link href="/blog" underline={false}>
-          <span class={`text-base md:text-2xl ${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-sm md:text-2xl ${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             blog
           </span>
         </Link>
-        <span class="text-base md:text-2xl px-1">
+        <span class="text-sm md:text-2xl px-1 relative top-[1px]">
           {`/`}
         </span>
         <Link href="/projects" underline={false}>
-          <span class={`text-base md:text-2xl ${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-sm md:text-2xl ${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             projects
           </span>
         </Link>
-        <span class="text-base md:text-2xl px-1">
+        <span class="text-sm md:text-2xl px-1 relative top-[1px]">
           {`/`}
         </span>
         <Link href="/cv" underline={false}>
-          <span class={`text-base md:text-2xl ${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-sm md:text-2xl ${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             cv
           </span>
         </Link>
