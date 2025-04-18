@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  emoji: string;
+}
+
+const { title, emoji } = Astro.props;
+---
+
+<div class="root-accordion bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 rounded-lg overflow-hidden">
+  <div class="p-6">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl md:text-2xl font-mono font-bold flex items-center gap-2 text-black/90 dark:text-white/90">
+        <span role="img" aria-label={title}>{emoji}</span> {title}
+      </h2>
+      <button class="accordion-toggle p-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 flex-shrink-0 transition-colors">
+        <svg class="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 text-black/70 dark:text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+    <div class="accordion-content hidden mt-6">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const accordions = document.querySelectorAll('.root-accordion');
+    
+    accordions.forEach(accordion => {
+      const toggle = accordion.querySelector('.accordion-toggle');
+      const content = accordion.querySelector('.accordion-content');
+      const arrow = toggle?.querySelector('svg');
+      
+      toggle?.addEventListener('click', () => {
+        content?.classList.toggle('hidden');
+        arrow?.classList.toggle('rotate-180');
+      });
+    });
+  });
+</script> 
