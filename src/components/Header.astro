@@ -16,23 +16,23 @@ const currentPath = pathname.slice(1); // remove leading slash
       </Link>
       <nav class="flex gap-1 md:gap-2 font-mono">
         <Link href="/blog" underline={false}>
-          <span class={`text-lg ${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-xl ${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             blog
           </span>
         </Link>
-        <span class="text-lg px-1">
+        <span class="text-xl px-1">
           {`/`}
         </span>
         <Link href="/projects" underline={false}>
-          <span class={`text-lg ${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-xl ${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             projects
           </span>
         </Link>
-        <span class="text-lg px-1">
+        <span class="text-xl px-1">
           {`/`}
         </span>
         <Link href="/cv" underline={false}>
-          <span class={`text-lg ${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-xl ${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             cv
           </span>
         </Link>
