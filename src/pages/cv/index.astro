@@ -4,6 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import RootAccordion from "@components/RootAccordion.astro";
 import WorkExperience from "@components/WorkExperience.astro";
+import Education from "@components/Education.astro";
 import { CV } from "@consts";
 
 await getCollection("cv");
@@ -17,7 +18,7 @@ await getCollection("cv");
       </RootAccordion>
 
       <RootAccordion title="Education" emoji="🎓">
-        <!-- Education content will go here -->
+        <Education />
       </RootAccordion>
 
       <RootAccordion title="Publications" emoji="📚">

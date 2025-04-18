@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RootAccordion from '../components/RootAccordion.astro';
+import WorkAccordion from '../components/WorkAccordion.astro';
+import Education from '../components/Education.astro';
+---
+
+<Layout title="Experience">
+  <main class="max-w-4xl mx-auto px-4 py-8 md:py-16 space-y-8">
+    <RootAccordion title="Education" emoji="🎓">
+      <Education
+        school="University of California, Berkeley – School of Information"
+        degree="Master of Information Management & Systems"
+        location="Berkeley, CA"
+        period="2021 – 2023"
+        website="https://www.ischool.berkeley.edu/"
+        logo="/logos/berkeley.png"
+        subjects={[
+          "Machine Learning",
+          "Deep Learning",
+          "NLP",
+          "Computer Vision",
+          "Audio Signal Processing",
+          "Data Engineering",
+          "Experiments & Causal Inference",
+          "Quantitative Research",
+          "Information Law & Policy",
+          "Lean Product Development"
+        ]}
+        extras={[
+          {
+            title: "Teaching Assistantships",
+            items: [
+              "Natural Language Processing Spring 2022",
+              "Applied Econometrics Fall 23",
+              "Applied Machine Learning Spring 23"
+            ]
+          },
+          {
+            title: "Research",
+            items: ["Deepfake detection and media forensics under the supervision of Prof. Hany Farid"]
+          }
+        ]}
+      />
+
+      <Education
+        school="National Institute of Technology, Calicut"
+        degree="B.Tech in Electronics & Communication Engineering"
+        location="Calicut, India"
+        period="2007 – 2011"
+        website="https://nitc.ac.in/"
+        logo="/logos/nitc.png"
+        subjects={[
+          "Telecom & Wireless Networks",
+          "Digital Signal Processing",
+          "Microcontrollers",
+          "Computer Architecture"
+        ]}
+      />
+    </RootAccordion>
+
+    <RootAccordion title="Work Experience" emoji="💼">
+      <WorkAccordion
+        title="Senior Software Engineer"
+        company="Apple"
+        location="Cupertino, CA"
+        period="2023 – Present"
+        website="https://www.apple.com"
+        logo="/logos/apple.png"
+        description="Working on next-generation AI features for Apple products."
+        details={[
+          {
+            title: "Key Responsibilities",
+            items: [
+              "Leading development of machine learning infrastructure",
+              "Collaborating with cross-functional teams on AI initiatives",
+              "Mentoring junior engineers"
+            ]
+          }
+        ]}
+      />
+    </RootAccordion>
+  </main>
+</Layout> 
