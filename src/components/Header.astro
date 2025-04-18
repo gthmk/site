@@ -10,17 +10,17 @@ const currentPath = pathname.slice(1); // remove leading slash
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between items-center">
       <Link href="/" underline={false}>
-        <div class={`text-xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
+        <div class={`text-base md:text-xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
           👨🏽‍💻 gthmk.dev
         </div>
       </Link>
-      <nav class="flex gap-1 text-xl font-mono">
+      <nav class="flex gap-0.5 md:gap-1 text-base md:text-xl font-mono">
         <Link href="/blog" underline={false}>
           <span class={`${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             blog
           </span>
         </Link>
-        <span>
+        <span class="px-0.5 md:px-1">
           {`/`}
         </span>
         <Link href="/projects" underline={false}>
@@ -28,7 +28,7 @@ const currentPath = pathname.slice(1); // remove leading slash
             projects
           </span>
         </Link>
-        <span>
+        <span class="px-0.5 md:px-1">
           {`/`}
         </span>
         <Link href="/cv" underline={false}>
@@ -38,7 +38,7 @@ const currentPath = pathname.slice(1); // remove leading slash
         </Link>
       </nav>
     </div>
-    <div class="relative flex justify-center mt-2">
+    <div class="relative flex justify-center mt-1 md:mt-2">
       <div class="absolute left-1/2 -translate-x-1/2 w-[102%] border-b border-gray-400/60"></div>
     </div>
   </Container>
