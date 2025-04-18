@@ -1,6 +1,6 @@
 # gthmk.dev
 
-**Gautham Koorma’s Personal Blog** — built using a modern, minimal, and performance-optimized stack designed for speed, readability, and developer experience.
+**Gautham Koorma's Personal Blog** — built using a modern, minimal, and performance-optimized stack designed for speed, readability, and developer experience.
 
 ## 🛠️ Tech Stack
 
@@ -37,6 +37,35 @@ All commands are run from the root of the project using [Bun](https://bun.sh):
 | `bun run astro ...`      | Run Astro CLI commands (e.g., `astro check`)     |
 | `bun run lint`           | Run ESLint checks                                |
 | `bun run lint:fix`       | Auto-fix linting issues                          |
+
+---
+
+## 🏗️ Vercel Build Simulation
+
+To simulate the Vercel build process locally:
+
+1. Install the Vercel CLI globally:
+   ```bash
+   bun add -g vercel
+   ```
+
+2. Add Bun's global bin folder to your PATH:
+   ```bash
+   export PATH="/Users/<username>/.bun/bin:$PATH"
+   ```
+
+3. Run the build:
+   ```bash
+   vercel build
+   ```
+
+This will:
+- Pull your project settings from Vercel
+- Install dependencies using Bun
+- Run the build process
+- Show any build errors or warnings
+
+> 💡 Note: The first time you run `vercel build`, it will ask to link your project and download environment variables.
 
 ---
 

@@ -3,7 +3,6 @@ interface Props {
   title: string;
   company: string;
   location: string;
-  industry: string;
   period: string;
   website?: string;
   logo?: string;
@@ -14,7 +13,7 @@ interface Props {
   }[];
 }
 
-const { title, company, location, industry, period, website, logo, description, details } = Astro.props;
+const { title, company, location, period, website, logo, description, details } = Astro.props;
 
 const getRoleEmoji = (title: string) => {
   if (title.toLowerCase().includes('engineer')) return '👨‍💻';
@@ -92,7 +91,12 @@ const roleEmoji = getRoleEmoji(title);
 <script>
   document.querySelectorAll('.accordion-toggle').forEach(button => {
     button.addEventListener('click', () => {
-      const content = button.closest('.experience-accordion').querySelector('.accordion-content');
+      const accordion = button.closest('.experience-accordion');
+      if (!accordion) return;
+      
+      const content = accordion.querySelector('.accordion-content');
+      if (!content) return;
+      
       const isExpanded = content.classList.contains('hidden');
       
       // Toggle the content
@@ -100,7 +104,9 @@ const roleEmoji = getRoleEmoji(title);
       
       // Rotate the arrow
       const arrow = button.querySelector('svg');
-      arrow.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0)';
+      if (arrow) {
+        arrow.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0)';
+      }
     });
   });
 </script>
