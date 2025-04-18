@@ -5,13 +5,6 @@
 html {
   overflow-y: scroll;
   color-scheme: light;
-  font-size: 14px; /* Base size for mobile */
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px; /* Base size for desktop */
-  }
 }
 
 html.dark {
@@ -30,18 +23,35 @@ body {
   @apply text-black dark:text-white;
 }
 
+/* Base text sizes */
+.text-xl {
+  @apply text-[1.25rem] md:text-[1.5rem]; /* 20px mobile, 24px desktop */
+}
+
+.text-lg {
+  @apply text-[1rem] md:text-[1.25rem]; /* 16px mobile, 20px desktop */
+}
+
+.text-base {
+  @apply text-[0.875rem] md:text-[1rem]; /* 14px mobile, 16px desktop */
+}
+
+.text-sm {
+  @apply text-[0.75rem] md:text-[0.875rem]; /* 12px mobile, 14px desktop */
+}
+
 header {
-  @apply fixed top-0 left-0 right-0 z-50 py-6 md:py-8;
+  @apply fixed top-0 left-0 right-0 z-50 py-4 md:py-6;
   @apply bg-white/90 dark:bg-black/80;
   @apply backdrop-blur-sm saturate-200;
 }
 
 main {
-  @apply flex-1 pt-24 md:pt-32 pb-20 md:pb-28;
+  @apply flex-1 pt-20 md:pt-28 pb-16 md:pb-24;
 }
 
 footer {
-  @apply py-6 md:py-8 text-sm font-mono;
+  @apply py-4 md:py-6 text-sm font-mono;
 }
 
 article {
@@ -49,12 +59,40 @@ article {
   @apply prose-headings:font-mono prose-p:font-mono;
   @apply prose-headings:text-black prose-headings:dark:text-white;
   @apply bg-transparent dark:bg-black;
-  font-size: 0.875rem; /* 14px for mobile */
+}
+
+/* Adjust spacing scale */
+.space-y-6 > * + * {
+  margin-top: 1rem; /* 16px mobile */
+}
+
+.space-y-4 > * + * {
+  margin-top: 0.75rem; /* 12px mobile */
+}
+
+.p-6 {
+  padding: 1rem; /* 16px mobile */
+}
+
+.gap-2 {
+  gap: 0.375rem; /* 6px mobile */
 }
 
 @media (min-width: 768px) {
-  article {
-    font-size: 1rem; /* 16px for desktop */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem; /* 24px desktop */
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem; /* 16px desktop */
+  }
+  
+  .p-6 {
+    padding: 1.5rem; /* 24px desktop */
+  }
+  
+  .gap-2 {
+    gap: 0.5rem; /* 8px desktop */
   }
 }
 
@@ -64,12 +102,14 @@ article {
     @apply decoration-black/30 dark:decoration-white/30;
     @apply transition-colors duration-300 ease-in-out;
   }
+  
   /* Force list numbers to match text color in both light and dark modes */
   :is(.prose, .prose-invert) ol > li:before {
     color: currentColor !important;
     opacity: 1 !important;
     text-shadow: none !important;
   }
+  
   /* Force Core Interests list numbers to match text color */
   .core-list > li::marker {
     color: currentColor !important;
@@ -81,38 +121,6 @@ article {
   article a:hover {
     @apply text-black dark:text-white;
     @apply decoration-black/50 dark:decoration-white/50;
-  }
-
-  /* Scale text sizes for mobile */
-  @media (max-width: 767px) {
-    .text-xl {
-      font-size: 1.125rem; /* 18px */
-    }
-    .text-lg {
-      font-size: 1rem; /* 16px */
-    }
-    .text-base {
-      font-size: 0.875rem; /* 14px */
-    }
-    .text-sm {
-      font-size: 0.75rem; /* 12px */
-    }
-    
-    /* Adjust spacing for mobile */
-    .space-y-6 {
-      margin-top: 1.25rem;
-      margin-bottom: 1.25rem;
-    }
-    .space-y-4 {
-      margin-top: 0.875rem;
-      margin-bottom: 0.875rem;
-    }
-    .p-6 {
-      padding: 1.25rem;
-    }
-    .gap-2 {
-      gap: 0.375rem;
-    }
   }
 }
 
