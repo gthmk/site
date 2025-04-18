@@ -1,0 +1,244 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ExperienceAccordion from "@components/ExperienceAccordion.astro";
+import { CV } from "@consts";
+
+const data = (await getCollection("cv"))
+  .filter(entry => !entry.data.draft)
+  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf());
+---
+
+<PageLayout title={CV.TITLE} description={CV.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <section class="space-y-6">
+        <h2 class="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">
+          <span role="img" aria-label="work experience">💼</span> Work Experience
+          <span class="text-base font-normal ml-2">(11+ years)</span>
+        </h2>
+        <div class="space-y-4">
+          <ExperienceAccordion
+            title="Senior Machine Learning Engineer"
+            company="GetReal Labs Inc."
+            location="Berkeley, CA"
+            industry="Cybersecurity & Digital Forensics"
+            period="Jun 2023 – Mar 2025"
+            website="https://www.getrealsecurity.com"
+            logo="/logos/getreal-labs.jpg"
+            description="Founding engineering team member at GetReal Labs, a "
+            details={[
+              {
+                title: "Model Development",
+                items: [
+                  "Developed core detection models using classical signal processing and modern neural network-based methods for image analysis in the initial launch of the self-serve media forensic workbench. Achieved >95% accuracy and <1% FPR on internal datasets.",
+                  "Fine-tuned transformer networks to detect synthetic faces and faceswaps in static files and real-time video.",
+                  "Operationalized a multimodal lipsync deepfake detector using audio-visual mismatch analysis, achieving >90% accuracy in real-world testing."
+                ]
+              },
+              {
+                title: "MLOps & Deployment",
+                items: [
+                  "Designed training and inference pipelines using AWS SageMaker, Lambda, and ECS.",
+                  "Containerized workflows for reproducible ML experiments and scalable deployment.",
+                  "Reduced training time ~5× with distributed preprocessing and pipeline parallelism.",
+                  "Integrated models into GRL Inspect (file forensics) and GRL Protect (stream protection)."
+                ]
+              },
+              {
+                title: "Adversarial & Robustness Testing",
+                items: [
+                  "Simulated attacks and edge cases to expose model failure modes and blind spots.",
+                  "Tracked emerging GenAI threats and curated augmentation datasets.",
+                  "Built visualizations to monitor drift, false positives, and track robustness over time."
+                ]
+              },
+              {
+                title: "Customer Engagement & Incident Response",
+                items: [
+                  "Collaborated with journalists & forensic experts during major worldwide elections 2024 for manual verification/incident response.",
+                  "Minimized false positives through human-in-the-loop decisions and continuous model improvement based on feedback."
+                ]
+              }
+            ]}
+          />
+          <ExperienceAccordion
+            title="Data Science Intern"
+            company="Moveworks Inc."
+            location="Mountain View, CA"
+            industry="Enterprise AI Automation"
+            period="May 2022 – Aug 2022"
+            website="https://www.moveworks.com"
+            logo="/logos/moveworks.jpg"
+            description="Summer intern at a scaleup building conversational agents for enterprise automation workflows"
+            details={[
+              {
+                title: "Product Analytics",
+                items: [
+                  "Defined key engagement metrics for enterprise AI features",
+                  "Built interactive dashboards to track feature adoption",
+                  "Generated actionable insights for product roadmap",
+                  "Supported customer success strategies with data-driven recommendations"
+                ]
+              }
+            ]}
+          />
+          <ExperienceAccordion
+            title="Consultant → Director"
+            company="UnitedLex Corporation"
+            location="Austin, TX"
+            industry="Technology Consulting & IP Strategy"
+            period="Aug 2017 – Jul 2021"
+            website="https://www.unitedlex.com"
+            logo="/logos/unitedlex.jpg"
+            description="Led technical investigations and strategic consulting for high-stakes IP litigation, M&A due diligence, and enterprise portfolio optimization."
+            details={[
+              {
+                title: "Expert Litigation Support & Reverse Engineering",
+                items: [
+                  "Led investigations across 10+ IP litigations in telecom, software, graphics, and infrastructure domains, contributing to outcomes exceeding $100M in settlements and licensing deals.",
+                  "Conducted in-depth code analysis, reverse engineering, simulation, and testing to reconstruct logic and control flow for technical evidence.",
+                  "Delivered artifacts used in U.S. District Court and ITC proceedings, including infringement charts, rebuttal reports, and expert witness materials."
+                ]
+              },
+              {
+                title: "Leadership, Solutioning & Workflow Design",
+                items: [
+                  "Progressed from individual contributor to Director; led cross-functional delivery teams across India and the U.S.",
+                  "Streamlined workflows through process automation, reducing turnaround time by ~25% and unlocking new revenue streams.",
+                  "Supported business development and solution design for Fortune 500 clients and law firms."
+                ]
+              },
+              {
+                title: "Portfolio Analytics & Commercial Strategy",
+                items: [
+                  "Architected workflows to assess patent strength, product coverage, and claim alignment. Reduced portfolio maintenance costs by 20–30% and increased licensing ROI.",
+                  "Conducted diligence on $500M+ in IP assets to inform tech licensing and M&A deals.",
+                  "Evaluated 100+ technologies and IP portfolios to guide R&D strategy, uncover white space, and improve market positioning."
+                ]
+              }
+            ]}
+          />
+          <ExperienceAccordion
+            title="Associate → Consultant"
+            company="iRunway India Pvt. Ltd."
+            location="Bangalore, India"
+            industry="IP Analytics & Technical Investigations"
+            period="Oct 2012 – Aug 2017"
+            website="https://unitedlex.com/news/unitedlex-expands-enterprise-level-ip-solutions-capabilities-with-irunway-acquisition/"
+            logo="/logos/unitedlex.jpg"
+            description="Advanced from analyst to team lead, contributing to litigation support and IP strategy through data-driven analytics and exploratory investigations."
+            details={[
+              {
+                title: "Patent Analytics & Portfolio Strategy",
+                items: [
+                  "Analyzed patent portfolios in telecom, software, and semiconductors using both qualitative and quantitative approaches.",
+                  "Used Python and Excel to clean, model, and visualize portfolio data for alignment, gaps, and licensing potential.",
+                  "Supported licensing negotiations by preparing strength and overlap analysis against competitor portfolios."
+                ]
+              },
+              {
+                title: "Technical Investigations & Public Code Analysis",
+                items: [
+                  "Performed static and dynamic analysis on public/proprietary software systems; mapped features and functions to patent claims.",
+                  "Reconstructed control flow and product architecture to generate technical documentation for legal exhibits."
+                ]
+              },
+              {
+                title: "Project Delivery & Team Enablement",
+                items: [
+                  "Led analytics workstreams on multi-stakeholder projects; coordinated deliverables across internal and client teams.",
+                  "Mentored junior analysts, contributed to hiring and internal tooling, and drove knowledge-sharing across engagements."
+                ]
+              }
+            ]}
+          />
+          <ExperienceAccordion
+            title="Research Associate (Intellectual Property)"
+            company="Evalueserve SEZ Pvt. Ltd."
+            location="Gurgaon, India"
+            industry="IP Research & Consulting"
+            period="Feb 2012 – Oct 2012"
+            website="https://www.evalueserve.com"
+            logo="/logos/evalueserve.jpg"
+            description="Early-career role at a global research firm providing patent analysis services to law firms and corporate R&D teams"
+            details={[
+              {
+                title: "Patent Search & Analysis",
+                items: [
+                  "Conducted validity, invalidity, and freedom-to-operate (FTO) searches across telecom, software, and electronics domains",
+                  "Delivered structured prior art reports to support IP litigation and competitive intelligence",
+                  "Trained in patent law, claim interpretation, search strategy, and international IP frameworks"
+                ]
+              }
+            ]}
+          />
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">
+          <span role="img" aria-label="education">🎓</span> Education
+        </h2>
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 class="text-lg font-semibold">🎓 Master's in Information Science</h3>
+                <p class="text-gray-600 dark:text-gray-300">University of California, Berkeley 🐻</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 class="text-lg font-semibold">📡 Bachelor's in Electronics and Telecommunication Engineering</h3>
+                <p class="text-gray-600 dark:text-gray-300">National Institute of Technology, Calicut 🌴</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">
+          <span role="img" aria-label="publications">📚</span> Publications
+        </h2>
+        <div class="space-y-4">
+          <!-- Publications content will go here -->
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">
+          <span role="img" aria-label="media">📰</span> Media
+        </h2>
+        <div class="space-y-4">
+          <!-- Media content will go here -->
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">
+          <span role="img" aria-label="awards">🏆</span> Awards
+        </h2>
+        <div class="space-y-4">
+          <!-- Awards content will go here -->
+        </div>
+      </section>
+    </div>
+  </Container>
+</PageLayout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+</style>

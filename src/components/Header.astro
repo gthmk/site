@@ -1,0 +1,46 @@
+---
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE } from "@consts";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove leading slash
+---
+
+<header class="bg-white/90 dark:bg-black/80">
+  <Container>
+    <div class="flex flex-wrap gap-y-2 justify-between items-center">
+      <Link href="/" underline={false}>
+        <div class={`text-xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
+          👨🏽‍💻 gthmk.dev
+        </div>
+      </Link>
+      <nav class="flex gap-1 text-xl font-mono">
+        <Link href="/blog" underline={false}>
+          <span class={`${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+            blog
+          </span>
+        </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/projects" underline={false}>
+          <span class={`${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+            projects
+          </span>
+        </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/cv" underline={false}>
+          <span class={`${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+            cv
+          </span>
+        </Link>
+      </nav>
+    </div>
+    <div class="relative flex justify-center mt-2">
+      <div class="absolute left-1/2 -translate-x-1/2 w-[102%] border-b border-gray-400/60"></div>
+    </div>
+  </Container>
+</header>

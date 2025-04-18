@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply size-full;
+}
+
+body {
+  @apply font-mono antialiased;
+  @apply flex flex-col;
+  @apply bg-white dark:bg-black;
+  @apply text-black dark:text-white;
+}
+
+header {
+  @apply fixed top-0 left-0 right-0 z-50 py-8;
+  @apply bg-white/90 dark:bg-black/80;
+  @apply backdrop-blur-sm saturate-200;
+}
+
+main {
+  @apply flex-1 pt-32 pb-28;
+}
+
+footer {
+  @apply py-8 text-sm font-mono;
+}
+
+article {
+  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose-headings:font-mono prose-p:font-mono;
+  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply bg-transparent dark:bg-black;
+}
+
+@layer utilities {
+  article a {
+    @apply font-mono text-black dark:text-white underline underline-offset-2;
+    @apply decoration-black/30 dark:decoration-white/30;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+  /* Force list numbers to match text color in both light and dark modes */
+  :is(.prose, .prose-invert) ol > li:before {
+    color: currentColor !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+  /* Force Core Interests list numbers to match text color */
+  .core-list > li::marker {
+    color: currentColor !important;
+    opacity: 1 !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+  }
+
+  article a:hover {
+    @apply text-black dark:text-white;
+    @apply decoration-black/50 dark:decoration-white/50;
+  }
+}
+
+.animate {
+  @apply opacity-0 translate-y-3;
+  @apply transition-all duration-700 ease-out;
+}
+
+.animate.show {
+  @apply opacity-100 translate-y-0;
+}
