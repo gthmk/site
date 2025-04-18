@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import RootAccordion from '../components/RootAccordion.astro';
 import WorkAccordion from '../components/WorkAccordion.astro';
 import Education from '../components/Education.astro';
 ---
 
-<Layout title="Experience">
+<PageLayout title="Experience" description="My professional experience and education">
   <main class="max-w-4xl mx-auto px-4 py-8 md:py-16 space-y-8">
     <RootAccordion title="Education" emoji="🎓">
       <Education
@@ -91,4 +91,4 @@ import Education from '../components/Education.astro';
       />
     </RootAccordion>
   </main>
-</Layout> 
+</PageLayout> 

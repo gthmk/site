@@ -11,7 +11,7 @@
 - [Bun](https://bun.sh) – Ultra-fast all-in-one JavaScript runtime
 - [Vercel](https://vercel.com/) – Frontend hosting and CI/CD platform
 
----
+
 
 ## 🚀 Features (inherited from Astro Nano)
 
@@ -22,7 +22,6 @@
 - ✅ Animated interactions (Framer Motion)
 - ✅ Auto-generated sitemap and RSS feed
 
----
 
 ## 💻 Local Development
 
@@ -38,7 +37,7 @@ All commands are run from the root of the project using [Bun](https://bun.sh):
 | `bun run lint`           | Run ESLint checks                                |
 | `bun run lint:fix`       | Auto-fix linting issues                          |
 
----
+
 
 ## 🏗️ Vercel Build Simulation
 
@@ -67,13 +66,12 @@ This will:
 
 > 💡 Note: The first time you run `vercel build`, it will ask to link your project and download environment variables.
 
----
 
 ## 📄 Content Structure
 
 Content lives in the `src/content/` directory. Blog posts are authored in Markdown (`.md`) or MDX (`.mdx`), allowing you to embed React-like components in markdown files.
 
----
+
 
 ## ⚙️ Deployment
 
@@ -83,14 +81,12 @@ To deploy manually:
 1. Push changes to the `main` branch
 2. Vercel will detect the update and trigger a new build
 
----
+
 
 ## 📫 Author
 
 **Gautham Koorma**  
 [Website](https://gthmk.dev) | [LinkedIn](https://www.linkedin.com/in/gthmk) | [GitHub](https://github.com/gthmk)
-
----
 
 > ⚡ Powered by [Bun](https://bun.sh) and [Astro](https://astro.build).  
 > ✨ Built with simplicity, speed, and clean design in mind.
