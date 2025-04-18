@@ -10,29 +10,29 @@ const currentPath = pathname.slice(1); // remove leading slash
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between items-center">
       <Link href="/" underline={false}>
-        <div class={`text-xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
+        <div class={`text-lg md:text-2xl font-mono ${currentPath === '' ? 'font-bold' : ''}`}>
           👨🏽‍💻 gthmk.dev
         </div>
       </Link>
       <nav class="flex gap-1 md:gap-2 font-mono">
         <Link href="/blog" underline={false}>
-          <span class={`text-xl ${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-lg md:text-2xl ${currentPath.startsWith('blog') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             blog
           </span>
         </Link>
-        <span class="text-xl px-1">
+        <span class="text-lg md:text-2xl px-1">
           {`/`}
         </span>
         <Link href="/projects" underline={false}>
-          <span class={`text-xl ${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-lg md:text-2xl ${currentPath.startsWith('projects') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             projects
           </span>
         </Link>
-        <span class="text-xl px-1">
+        <span class="text-lg md:text-2xl px-1">
           {`/`}
         </span>
         <Link href="/cv" underline={false}>
-          <span class={`text-xl ${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
+          <span class={`text-lg md:text-2xl ${currentPath.startsWith('cv') ? 'font-bold' : 'hover:font-bold transition-all'}`}>
             cv
           </span>
         </Link>
