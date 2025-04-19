@@ -11,7 +11,7 @@ interface Props {
   period: string;
   website?: string;
   logo?: string;
-  description?: string | JSX.Element;
+  description?: string;
   details: Detail[];
 }
 
@@ -64,9 +64,7 @@ const roleEmoji = getRoleEmoji(title);
           <span role="img" aria-label="duration">⌚</span> {period}
         </div>
 
-        <p class="font-mono text-sm md:text-lg text-black/70 dark:text-white/70">
-          {typeof description === 'string' ? description : <>{description}</>}
-        </p>
+        <p class="font-mono text-sm md:text-lg text-black/70 dark:text-white/70" set:html={description}></p>
       </div>
     </div>
 
