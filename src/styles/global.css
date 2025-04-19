@@ -25,19 +25,19 @@ body {
 
 /* Base text sizes */
 .text-xl {
-  @apply text-[1.25rem] md:text-[1.5rem]; /* 20px mobile, 24px desktop */
+  @apply text-[1.5rem] md:text-[1.5rem]; /* 24px mobile, 24px desktop */
 }
 
 .text-lg {
-  @apply text-[1rem] md:text-[1.25rem]; /* 16px mobile, 20px desktop */
+  @apply text-[1.25rem] md:text-[1.25rem]; /* 20px mobile, 20px desktop */
 }
 
 .text-base {
-  @apply text-[0.875rem] md:text-[1rem]; /* 14px mobile, 16px desktop */
+  @apply text-[1rem] md:text-[1rem]; /* 16px mobile, 16px desktop */
 }
 
 .text-sm {
-  @apply text-[0.75rem] md:text-[0.875rem]; /* 12px mobile, 14px desktop */
+  @apply text-[0.875rem] md:text-[0.875rem]; /* 14px mobile, 14px desktop */
 }
 
 header {
